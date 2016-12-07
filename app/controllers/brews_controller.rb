@@ -41,7 +41,7 @@ class BrewsController < ApplicationController
   def destroy
     @brew = Brew.find_by(id: params[:id])
     @brew.destroy
-    render 'index.json.jbuilder'
+    render json: { message: "Brew successfully destroyed!" }
   end
 
 end
