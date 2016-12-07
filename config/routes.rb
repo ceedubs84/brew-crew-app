@@ -3,5 +3,7 @@ Rails.application.routes.draw do
   get '/brews' => 'brews#index'
   post '/brews' => 'brews#create'
   get '/brews/:id' => 'brews#show'
-  
+  patch '/brews/:id' => 'brews#update'
+  delete '/brews/:id' => 'brews#destroy'
+
 end
