@@ -24,4 +24,24 @@ class BrewsController < ApplicationController
     render 'show.json.jbuilder'
   end
 
+  def update
+    @brew = Brew.find_by(id: params[:id])
+    @brew.name = params[:name]
+    @brew.style = params[:style]
+    @brew.hop = params[:hop]
+    @brew.yeast = params[:yeast]
+    @brew.malts = params[:malts]
+    @brew.ibu = params[:ibu]
+    @brew.alcohol = params[:alcohol]
+    @brew.blg = params[:blg]
+    @brew.save
+    render 'show.json.jbuilder'
+  end
+
+  def destroy
+    @brew = Brew.find_by(id: params[:id])
+    @brew.destroy
+    render 'index.json.jbuilder'
+  end
+
 end
