@@ -26,14 +26,14 @@ class BrewsController < ApplicationController
 
   def update
     @brew = Brew.find_by(id: params[:id])
-    @brew.name = params[:name]
-    @brew.style = params[:style]
-    @brew.hop = params[:hop]
-    @brew.yeast = params[:yeast]
-    @brew.malts = params[:malts]
-    @brew.ibu = params[:ibu]
-    @brew.alcohol = params[:alcohol]
-    @brew.blg = params[:blg]
+    @brew.name = params[:name] || @brew.name
+    @brew.style = params[:style] || @brew.style
+    @brew.hop = params[:hop] || @brew.hop
+    @brew.yeast = params[:yeast] || @brew.yeast
+    @brew.malts = params[:malts] || @brew.malts
+    @brew.ibu = params[:ibu] || @brew.ibu
+    @brew.alcohol = params[:alcohol] || @brew.alcohol
+    @brew.blg = params[:blg] || @brew.blg
     @brew.save
     render 'show.json.jbuilder'
   end
