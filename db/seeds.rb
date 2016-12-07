@@ -8,13 +8,13 @@
 
 25.times do
   Brew.create(
-    name: Faker::Brew.name,
-    style: Faker::Brew.style,
-    hop: Faker::Brew.hop,
-    yeast: Faker::Brew.yeast,
-    malts: Faker::Brew.malts,
-    ibu: Faker::Brew.ibu,
-    alcohol: Faker::Brew.alcohol,
-    blg: Faker::Brew.blg,
+    name: Faker::Beer.name,
+    style: Faker::Beer.style,
+    hop: Faker::Beer.hop,
+    yeast: Faker::Beer.yeast,
+    # malts: Faker::Beer.malts,
+    ibu: Faker::Beer.ibu,
+    alcohol: Faker::Beer.alcohol,
+    blg: Faker::Beer.blg
   )
 end

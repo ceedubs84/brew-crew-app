@@ -1,6 +1,6 @@
 class BrewsController < ApplicationController
   def index
-    @brews =
+    @brews = Brew.all
     render 'index.json.jbuilder'
   end
 
@@ -8,5 +8,5 @@ class BrewsController < ApplicationController
     @brew = Brew.find_by(id: params[:id])
     render 'show.json.jbuilder'
   end
-  
+
 end
