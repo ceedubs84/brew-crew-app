@@ -1,0 +1,1 @@
+json.partial! 'brew.json.jbuilder', brew: @brew

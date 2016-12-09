@@ -1,4 +1,4 @@
-class BrewsController < ApplicationController
+class API::V1::BrewsController < ApplicationController
   def index
     @brews = Brew.all
     render 'index.json.jbuilder'
