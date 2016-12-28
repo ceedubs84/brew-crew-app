@@ -9,6 +9,9 @@
     </div>
     <h4>Total number of brews: {{ brews.length }}</h4>
     <h4>Add Brew</h4>
+    <ul>
+      <li ng-repeat="error in errors">{{ error }}</li>
+    </ul>
     <div>
       <label>Name: </label>
       <input ng-model="newBrewName">
