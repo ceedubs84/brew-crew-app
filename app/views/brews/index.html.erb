@@ -2,15 +2,16 @@
 <div ng-app="app">
   <div ng-controller="brewsCtrl" ng-init="setup()">
     Search: <input ng-model="nameFilter">
-    <div>
-      <button ng-click="changeOrderAttribute('name')">Order by Name</button>
-      <button ng-click="changeOrderAttribute('style')">Order by Style</button>
-    </div>
-    <div ng-repeat="brew in brews | filter: {name: nameFilter} | orderBy:orderAttribute:isOrderDescending">
-      <h2 ng-click="toggleInfoVisible(brew)">{{ brew.name }}</h2>
-      <p ng-class="{strike: brew.infoVisible}">{{ brew.style }}</p>
-      <a href="#" ng-click="deleteBrew(brew)">Delete</a>
-    </div>
+    <table border="1">
+      <tr>
+        <th ng-click="changeOrderAttribute('name')">Order by Name</th>
+        <th ng-click="changeOrderAttribute('style')">Order by Style</th>
+      </tr>
+      <tr ng-repeat="brew in brews | filter: {name: nameFilter} | orderBy:orderAttribute:isOrderDescending">
+        <td>{{ brew.name }}</td>
+        <td>{{ brew.style }}</td>
+      </tr>
+    </table>
     <h4>Total number of brews: {{ brews.length }}</h4>
     <h4>Add Brew</h4>
     <ul>
