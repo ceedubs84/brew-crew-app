@@ -1,7 +1,11 @@
 <h1>Tasty Brews</h1>
 <div ng-app="app">
   <div ng-controller="brewsCtrl" ng-init="setup()">
-    Search: <input ng-model="nameFilter">
+    Search: <input ng-model="nameFilter" list="names">
+
+    <datalist id="names">
+      <option ng-repeat="brew in brews">{{ brew.name }}</option>
+    </datalist>
     <table border="1">
       <tr>
         <th ng-click="changeOrderAttribute('name')">Name {{ getSortIcon('name') }}</th>
