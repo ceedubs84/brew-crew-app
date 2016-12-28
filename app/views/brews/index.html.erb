@@ -4,8 +4,8 @@
     Search: <input ng-model="nameFilter">
     <table border="1">
       <tr>
-        <th ng-click="changeOrderAttribute('name')">Order by Name</th>
-        <th ng-click="changeOrderAttribute('style')">Order by Style</th>
+        <th ng-click="changeOrderAttribute('name')">Name {{ getSortIcon('name') }}</th>
+        <th ng-click="changeOrderAttribute('style')">Style {{ getSortIcon('style') }}</th>
       </tr>
       <tr ng-repeat="brew in brews | filter: {name: nameFilter} | orderBy:orderAttribute:isOrderDescending">
         <td>{{ brew.name }}</td>
