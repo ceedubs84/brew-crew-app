@@ -31,6 +31,10 @@
         $scope.brews.splice(index, 1);
       }
     };
+
+    $scope.changeOrderAttribute = function(inputAttribute) {
+      $scope.orderAttribute = inputAttribute;
+    };
     
     window.$scope = $scope;
 

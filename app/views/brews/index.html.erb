@@ -2,7 +2,11 @@
 <div ng-app="app">
   <div ng-controller="brewsCtrl" ng-init="setup()">
     Search: <input ng-model="nameFilter">
-    <div ng-repeat="brew in brews | filter: {name: nameFilter}">
+    <div>
+      <button ng-click="changeOrderAttribute('name')">Order by Name</button>
+      <button ng-click="changeOrderAttribute('style')">Order by Style</button>
+    </div>
+    <div ng-repeat="brew in brews | filter: {name: nameFilter} | orderBy:orderAttribute">
       <h2 ng-click="toggleInfoVisible(brew)">{{ brew.name }}</h2>
       <p ng-class="{strike: brew.infoVisible}">{{ brew.style }}</p>
       <a href="#" ng-click="deleteBrew(brew)">Delete</a>
