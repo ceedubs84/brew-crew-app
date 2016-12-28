@@ -1,0 +1,20 @@
+<h1>Tasty Brews</h1>
+
+<div ng-app="app">
+  <div ng-controller="brewsCtrl" ng-init="setup()">
+    <div ng-repeat="brew in brews">
+      <h2 ng-click="toggleInfoVisible(brew)">{{ brew.name }}</h2>
+      <p ng-class="{strike: brew.infoVisible}">{{ brew.style }}</p>
+      <a href="#" ng-click="deleteBrew(brew)">Delete</a>
+    </div>
+    <h4>Total number of brews: {{ brews.length }}</h4>
+    <h4>Add Brew</h4>
+    <div>
+      <label>Name: </label>
+      <input ng-model="newBrewName">
+      <label>Style: </label>
+      <input ng-model="newBrewStyle">
+      <button ng-click="addBrew(newBrewName, newBrewStyle)">Add Brew</button>
+    </div>
+  </div>
+</div>
