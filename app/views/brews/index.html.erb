@@ -6,7 +6,7 @@
       <button ng-click="changeOrderAttribute('name')">Order by Name</button>
       <button ng-click="changeOrderAttribute('style')">Order by Style</button>
     </div>
-    <div ng-repeat="brew in brews | filter: {name: nameFilter} | orderBy:orderAttribute">
+    <div ng-repeat="brew in brews | filter: {name: nameFilter} | orderBy:orderAttribute:isOrderDescending">
       <h2 ng-click="toggleInfoVisible(brew)">{{ brew.name }}</h2>
       <p ng-class="{strike: brew.infoVisible}">{{ brew.style }}</p>
       <a href="#" ng-click="deleteBrew(brew)">Delete</a>
